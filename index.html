@@ -11,8 +11,12 @@
         <div class="logo">
             <img src="delichamoooyy.png" alt="Logo Delí Chamoy">
         </div>
-        <nav>
-            <ul>
+        <button class="hamburger-menu" aria-label="Abrir menú de navegación">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav id="main-nav"> <ul>
                 <li><a href="#productos">Nuestros Productos</a></li>
                 <li><a href="#mision">Nuestra Misión</a></li>
                 <li><a href="#vision">Nuestra Visión</a></li>
@@ -94,5 +98,25 @@
         <p>&copy; 2025 DeliChamoy. Todos los derechos reservados.</p>
         <p>¡Síguenos en redes sociales!</p>
     </footer>
+
+    <script>
+        // Código JavaScript para el menú hamburguesa
+        const hamburgerBtn = document.querySelector('.hamburger-menu');
+        const mainNav = document.getElementById('main-nav');
+
+        hamburgerBtn.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+            hamburgerBtn.classList.toggle('open'); // Para animar el icono si deseas
+        });
+
+        // Opcional: Cerrar el menú si se hace clic en un enlace del menú
+        const navLinks = mainNav.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mainNav.classList.remove('active');
+                hamburgerBtn.classList.remove('open');
+            });
+        });
+    </script>
 </body>
 </html>
