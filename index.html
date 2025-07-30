@@ -1,37 +1,26 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <script>
-    const hamburgerBtn = document.querySelector('.hamburger-menu');
-    const mainNav = document.getElementById('main-nav');
-
-    hamburgerBtn.addEventListener('click', () => {
-        mainNav.classList.toggle('active');
-        hamburgerBtn.classList.toggle('open');
-    });
-        
-    const navLinks = mainNav.querySelectorAll('a');
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            mainNav.classList.remove('active');
-            hamburgerBtn.classList.remove('open');
-        });
-    });
-</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DeliChamoy - Tu explosión de sabores</title>
-    <link rel="stylesheet" href="style.css">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Outfit:wght@500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"> 
 </head>
 <body>
     <header>
         <div class="logo">
             <img src="delichamoooyy-Photoroom.png" alt="Logo Delí Chamoy">
         </div>
-        <nav>
+        <button class="hamburger-menu" aria-label="Abrir menú de navegación">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav id="main-nav"> 
             <ul>
                 <li><a href="#productos">Nuestros Productos</a></li>
                 <li><a href="#mision">Nuestra Misión</a></li>
@@ -120,7 +109,7 @@
             <a href="https://www.facebook.com/profile.php?id=61578870002109" target="_blank" rel="noopener noreferrer">
                 <img src="fb.png" alt="Facebook de DeliChamoy" class="social-icon">
             </a>
-            <a href="www.linkedin.com/in/deliii-chamoyy-3bab57377" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.linkedin.com/in/deliii-chamoyy-3bab57377" target="_blank" rel="noopener noreferrer">
                 <img src="linkedin.png" alt="LinkedIn de DeliChamoy" class="social-icon">
             </a>
             <a href="TU_LINK_DE_TIKTOK_AQUI" target="_blank" rel="noopener noreferrer">
@@ -131,5 +120,28 @@
             </a>
         </div>
     </footer>
+
+    <script>
+        const hamburgerBtn = document.querySelector('.hamburger-menu');
+        const mainNav = document.getElementById('main-nav');
+
+        // Verificar que ambos elementos existen antes de añadir event listeners
+        if (hamburgerBtn && mainNav) {
+            hamburgerBtn.addEventListener('click', () => {
+                mainNav.classList.toggle('active');
+                hamburgerBtn.classList.toggle('open');
+            });
+
+            const navLinks = mainNav.querySelectorAll('a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mainNav.classList.remove('active');
+                    hamburgerBtn.classList.remove('open');
+                });
+            });
+        } else {
+            console.warn('Advertencia: No se encontraron los elementos del menú hamburguesa. Asegúrate de que el HTML esté correcto.');
+        }
+    </script>
 </body>
 </html>
