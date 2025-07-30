@@ -1,6 +1,23 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <script>
+    const hamburgerBtn = document.querySelector('.hamburger-menu');
+    const mainNav = document.getElementById('main-nav');
+
+    hamburgerBtn.addEventListener('click', () => {
+        mainNav.classList.toggle('active');
+        hamburgerBtn.classList.toggle('open');
+    });
+        
+    const navLinks = mainNav.querySelectorAll('a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            mainNav.classList.remove('active');
+            hamburgerBtn.classList.remove('open');
+        });
+    });
+</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DeliChamoy - Tu explosión de sabores</title>
