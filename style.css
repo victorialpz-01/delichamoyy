@@ -23,7 +23,7 @@ body {
 }
 
 header {
-    background-color: black; /* Usamos un color de fondo sólido */
+    background-image: url(tajin.avif);;
     color: var(--color-white);
     padding: 1rem 0; /* Padding general, se ajustará en media queries */
     display: flex;
