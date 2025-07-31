@@ -435,7 +435,6 @@ footer p {
 
 .social-icon:hover {
     transform: scale(1.1); /* Agranda un poco al pasar el mouse */
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5); /* Resplandor blanco al pasar el mouse */
 }
 
 /* Media query para hacer los iconos más pequeños en móviles */
